@@ -18,16 +18,16 @@ public class Game {
     return board;
   }
 
-  public Either<String, Game> markXOn(Cell cellToMark) {
+  public Either<InvalidMove, Game> markXOn(Cell cellToMark) {
     return Turn.X == whosTurn
         ? new Either.Right<>(new Game(aBoardWith(cellToMark, State.X), Turn.O))
-        : new Either.Left<>("Now it's O's turn");
+        : new Either.Left<>(InvalidMove.IT_IS_NOT_YOUR_TURN);
   }
 
-  public Either<String, Game> markOOn(Cell cellToMark) {
+  public Either<InvalidMove, Game> markOOn(Cell cellToMark) {
     return Turn.O == whosTurn
         ? new Either.Right<>(new Game(aBoardWith(cellToMark, State.O), Turn.X))
-        : new Either.Left<>("Now it's X's turn");
+        : new Either.Left<>(InvalidMove.IT_IS_NOT_YOUR_TURN);
   }
 
   private Board aBoardWith(Cell cellToMark, State stateToPut) {

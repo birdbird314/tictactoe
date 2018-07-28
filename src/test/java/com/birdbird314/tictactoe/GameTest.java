@@ -50,7 +50,7 @@ public class GameTest {
     Cell anyCell = UPPER_LEFT;
     assertThat(
         new Game().markOOn(anyCell).left()
-    ).isEqualTo("Now it's X's turn");
+    ).isEqualTo(InvalidMove.IT_IS_NOT_YOUR_TURN);
   }
 
   @Test
@@ -75,6 +75,6 @@ public class GameTest {
             .right()
             .markXOn(anyOtherCell)
             .left()
-    ).isEqualTo("Now it's O's turn");
+    ).isEqualTo(InvalidMove.IT_IS_NOT_YOUR_TURN);
   }
 }
