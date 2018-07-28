@@ -1,0 +1,7 @@
+package com.birdbird314.tictactoe;
+
+public enum Cell {
+  MIDDLE_LEFT, UPPER_MIDDLE, UPPER_RIGHT,
+  MIDDLE_MIDDLE, BOTTOM_RIGHT, MIDDLE_RIGHT,
+  BOTTOM_MIDDLE, BOTTOM_LEFT, UPPER_LEFT
+}
