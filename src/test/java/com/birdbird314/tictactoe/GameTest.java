@@ -77,4 +77,32 @@ public class GameTest {
             .left()
     ).isEqualTo(InvalidMove.IT_IS_NOT_YOUR_TURN);
   }
+
+  @Test
+  public void shouldFailIfOTriesToMarkOccupiedCell() {
+    Cell anyCell = UPPER_LEFT;
+    assertThat(
+        new Game()
+            .markXOn(anyCell)
+            .right()
+            .markOOn(anyCell)
+            .left()
+    ).isEqualTo(InvalidMove.CELL_IS_NOT_EMPTY);
+  }
+
+  @Test
+  public void shouldFailIfXTriesToMarkOccupiedCell() {
+    Cell anyCell = UPPER_LEFT;
+    Cell anyOtherCell = UPPER_MIDDLE;
+    assertThat(
+        new Game()
+            .markXOn(anyCell)
+            .right()
+            .markOOn(anyOtherCell)
+            .right()
+            .markXOn(anyCell)
+            .left()
+    ).isEqualTo(InvalidMove.CELL_IS_NOT_EMPTY);
+  }
+
 }

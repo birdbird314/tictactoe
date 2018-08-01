@@ -1,5 +1,7 @@
 package com.birdbird314.tictactoe;
 
+import java.util.Optional;
+
 public class Game {
 
   private final Board board;
@@ -11,7 +13,8 @@ public class Game {
   }
 
   public Game() {
-    this(new Board() {}, Turn.X);
+    this(new Board() {
+    }, Turn.X);
   }
 
   public Board board() {
@@ -19,15 +22,33 @@ public class Game {
   }
 
   public Either<InvalidMove, Game> markXOn(Cell cellToMark) {
-    return Turn.X == whosTurn
-        ? new Either.Right<>(new Game(aBoardWith(cellToMark, State.X), Turn.O))
-        : new Either.Left<>(InvalidMove.IT_IS_NOT_YOUR_TURN);
+    return reasonForInvalidMove(cellToMark, Turn.X)
+        .map(this::left)
+        .orElse(new Either.Right<>(new Game(aBoardWith(cellToMark, State.X), Turn.O)));
   }
 
   public Either<InvalidMove, Game> markOOn(Cell cellToMark) {
-    return Turn.O == whosTurn
-        ? new Either.Right<>(new Game(aBoardWith(cellToMark, State.O), Turn.X))
-        : new Either.Left<>(InvalidMove.IT_IS_NOT_YOUR_TURN);
+    return reasonForInvalidMove(cellToMark, Turn.O)
+        .map(this::left)
+        .orElse(new Either.Right<>(new Game(aBoardWith(cellToMark, State.O), Turn.X)));
+  }
+
+  public Optional<Winner> winner() {
+    return new OptionalWinner(board).get();
+  }
+
+  private Either<InvalidMove, Game> left(InvalidMove reason) {
+    return new Either.Left<>(reason);
+  }
+
+  private Optional<InvalidMove> reasonForInvalidMove(Cell cellToMark, Turn intendedTurn) {
+    if (intendedTurn != whosTurn) {
+      return Optional.of(InvalidMove.IT_IS_NOT_YOUR_TURN);
+    } else if (board.stateOn(cellToMark) != State.EMPTY) {
+      return Optional.of(InvalidMove.CELL_IS_NOT_EMPTY);
+    } else {
+      return Optional.empty();
+    }
   }
 
   private Board aBoardWith(Cell cellToMark, State stateToPut) {
