@@ -37,10 +37,6 @@ public class Game {
     return new OptionalWinner(board).get();
   }
 
-  private Either<InvalidMove, Game> left(InvalidMove reason) {
-    return new Either.Left<>(reason);
-  }
-
   private Optional<InvalidMove> reasonForInvalidMove(Cell cellToMark, Turn intendedTurn) {
     if (intendedTurn != whosTurn) {
       return Optional.of(InvalidMove.IT_IS_NOT_YOUR_TURN);
@@ -51,6 +47,10 @@ public class Game {
     } else {
       return Optional.empty();
     }
+  }
+
+  private Either<InvalidMove, Game> left(InvalidMove reason) {
+    return new Either.Left<>(reason);
   }
 
   private Board aBoardWith(Cell cellToMark, State stateToPut) {
