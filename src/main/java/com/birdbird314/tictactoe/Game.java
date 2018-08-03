@@ -46,6 +46,8 @@ public class Game {
       return Optional.of(InvalidMove.IT_IS_NOT_YOUR_TURN);
     } else if (board.stateOn(cellToMark) != State.EMPTY) {
       return Optional.of(InvalidMove.CELL_IS_NOT_EMPTY);
+    } else if (winner().isPresent()) {
+      return Optional.of(InvalidMove.GAME_IS_ALREADY_FINISHED);
     } else {
       return Optional.empty();
     }

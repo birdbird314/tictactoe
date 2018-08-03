@@ -105,4 +105,17 @@ public class GameTest {
     ).isEqualTo(InvalidMove.CELL_IS_NOT_EMPTY);
   }
 
+  @Test
+  public void shouldFailDuringMoveAttemptWhenAfterGameWasFinished() {
+    assertThat(
+        new Game()
+            .markXOn(UPPER_LEFT).right()
+            .markOOn(MIDDLE_LEFT).right()
+            .markXOn(UPPER_MIDDLE).right()
+            .markOOn(MIDDLE_MIDDLE).right()
+            .markXOn(UPPER_RIGHT).right()
+            .markOOn(MIDDLE_RIGHT)
+            .left()
+    ).isEqualTo(InvalidMove.GAME_IS_ALREADY_FINISHED);
+  }
 }
