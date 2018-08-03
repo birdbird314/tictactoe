@@ -15,6 +15,8 @@ class OptionalWinner {
       return Optional.of(Winner.X);
     else if (oWins())
       return Optional.of(Winner.O);
+    else if (draft())
+      return Optional.of(Winner.DRAFT);
     else
       return Optional.empty();
   }
@@ -25,6 +27,10 @@ class OptionalWinner {
 
   private boolean oWins() {
     return winningGroups().anyMatch(this::hasOnlyOs);
+  }
+
+  private boolean draft() {
+    return Stream.of(Cell.values()).map(board::stateOn).noneMatch(State.EMPTY::equals);
   }
 
   private Stream<Cell[]> winningGroups() {

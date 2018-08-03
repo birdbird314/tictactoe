@@ -39,6 +39,24 @@ public class GameEndingsTest {
     assertThat(givenThreeOInUpperRow().winner()).contains(Winner.O);
   }
 
+  @Test
+  public void shouldDetermineDraft() {
+    assertThat(givenDraft().winner()).contains(Winner.DRAFT);
+  }
+
+  private Game givenDraft() {
+    return new Game()
+        .markXOn(UPPER_LEFT).right()
+        .markOOn(UPPER_MIDDLE).right()
+        .markXOn(UPPER_RIGHT).right()
+        .markOOn(MIDDLE_LEFT).right()
+        .markXOn(MIDDLE_RIGHT).right()
+        .markOOn(MIDDLE_MIDDLE).right()
+        .markXOn(BOTTOM_LEFT).right()
+        .markOOn(BOTTOM_RIGHT).right()
+        .markXOn(BOTTOM_MIDDLE).right();
+  }
+
   private Game givenThreeOInUpperRow() {
     return new Game()
         .markXOn(BOTTOM_MIDDLE).right()
