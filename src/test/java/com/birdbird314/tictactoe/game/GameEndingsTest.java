@@ -1,16 +1,18 @@
 package com.birdbird314.tictactoe;
 
+import com.birdbird314.tictactoe.game.Game;
+import com.birdbird314.tictactoe.game.Winner;
 import org.junit.Test;
 
-import static com.birdbird314.tictactoe.Cell.BOTTOM_LEFT;
-import static com.birdbird314.tictactoe.Cell.BOTTOM_MIDDLE;
-import static com.birdbird314.tictactoe.Cell.BOTTOM_RIGHT;
-import static com.birdbird314.tictactoe.Cell.MIDDLE_LEFT;
-import static com.birdbird314.tictactoe.Cell.MIDDLE_MIDDLE;
-import static com.birdbird314.tictactoe.Cell.MIDDLE_RIGHT;
-import static com.birdbird314.tictactoe.Cell.UPPER_LEFT;
-import static com.birdbird314.tictactoe.Cell.UPPER_MIDDLE;
-import static com.birdbird314.tictactoe.Cell.UPPER_RIGHT;
+import static com.birdbird314.tictactoe.game.Cell.BOTTOM_LEFT;
+import static com.birdbird314.tictactoe.game.Cell.BOTTOM_MIDDLE;
+import static com.birdbird314.tictactoe.game.Cell.BOTTOM_RIGHT;
+import static com.birdbird314.tictactoe.game.Cell.MIDDLE_LEFT;
+import static com.birdbird314.tictactoe.game.Cell.MIDDLE_MIDDLE;
+import static com.birdbird314.tictactoe.game.Cell.MIDDLE_RIGHT;
+import static com.birdbird314.tictactoe.game.Cell.UPPER_LEFT;
+import static com.birdbird314.tictactoe.game.Cell.UPPER_MIDDLE;
+import static com.birdbird314.tictactoe.game.Cell.UPPER_RIGHT;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class GameEndingsTest {

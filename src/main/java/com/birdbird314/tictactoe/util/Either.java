@@ -1,4 +1,4 @@
-package com.birdbird314.tictactoe;
+package com.birdbird314.tictactoe.util;
 
 /**
  * This is similar to Either in Scala, but much simpler

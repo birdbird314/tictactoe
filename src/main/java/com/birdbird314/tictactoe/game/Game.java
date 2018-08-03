@@ -1,4 +1,6 @@
-package com.birdbird314.tictactoe;
+package com.birdbird314.tictactoe.game;
+
+import com.birdbird314.tictactoe.util.Either;
 
 import java.util.Optional;
 

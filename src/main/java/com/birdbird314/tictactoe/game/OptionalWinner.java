@@ -1,4 +1,4 @@
-package com.birdbird314.tictactoe;
+package com.birdbird314.tictactoe.game;
 
 import java.util.Optional;
 import java.util.stream.Stream;
