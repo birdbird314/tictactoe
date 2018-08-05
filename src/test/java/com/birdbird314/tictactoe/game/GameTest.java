@@ -1,9 +1,5 @@
-package com.birdbird314.tictactoe;
+package com.birdbird314.tictactoe.game;
 
-import com.birdbird314.tictactoe.game.Cell;
-import com.birdbird314.tictactoe.game.Game;
-import com.birdbird314.tictactoe.game.InvalidMove;
-import com.birdbird314.tictactoe.game.State;
 import org.junit.Test;
 
 import java.util.stream.Stream;

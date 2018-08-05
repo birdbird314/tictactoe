@@ -1,4 +1,4 @@
-package com.birdbird314.tictactoe;
+package com.birdbird314.tictactoe.game;
 
 import com.birdbird314.tictactoe.game.Game;
 import com.birdbird314.tictactoe.game.Winner;
