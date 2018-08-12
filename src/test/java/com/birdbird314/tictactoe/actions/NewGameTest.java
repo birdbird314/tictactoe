@@ -1,4 +1,4 @@
-package com.birdbird314.tictactoe;
+package com.birdbird314.tictactoe.actions;
 
 import com.birdbird314.tictactoe.action.Actions;
 import com.birdbird314.tictactoe.action.GameStartFail;
@@ -10,7 +10,7 @@ import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class AcceptanceTest {
+public class NewGameTest {
   private Actions actions;
 
   @Before
