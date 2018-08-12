@@ -2,22 +2,29 @@ package com.birdbird314.tictactoe;
 
 import com.birdbird314.tictactoe.action.Actions;
 import com.birdbird314.tictactoe.action.GameStartFail;
+import com.birdbird314.tictactoe.player.HashSetActivePlayers;
 import com.birdbird314.tictactoe.util.Either;
 import com.birdbird314.tictactoe.util.Unit;
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class AcceptanceTest {
+  private Actions actions;
+
+  @Before
+  public void setUp() {
+    actions = new Actions(new HashSetActivePlayers());
+  }
+
   @Test
   public void shouldStartNewGame() {
-    new Actions().newGame("someXPlayerId", "someOPlayerId").execute().right();
+    actions.newGame("someXPlayerId", "someOPlayerId").execute().right();
   }
 
   @Test
   public void shouldFailStartingANewGameIfXPlayerIsAlreadyPlaying() {
-    Actions actions = new Actions();
-
     actions.newGame("someXPlayerId", "someOPlayerId").execute();
     Either<GameStartFail, Unit> result = actions.newGame("someXPlayerId", "someOtherOPlayerId").execute();
 
@@ -26,8 +33,6 @@ public class AcceptanceTest {
 
   @Test
   public void shouldFailStartingANewGameIfOPlayerIsAlreadyPlaying() {
-    Actions actions = new Actions();
-
     actions.newGame("someXPlayerId", "someOPlayerId").execute();
     Either<GameStartFail, Unit> result = actions.newGame("someOtherXPlayerId", "someOPlayerId").execute();
 
