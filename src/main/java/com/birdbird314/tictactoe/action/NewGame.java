@@ -1,6 +1,5 @@
 package com.birdbird314.tictactoe.action;
 
-import com.birdbird314.tictactoe.GameStartFail;
 import com.birdbird314.tictactoe.util.Command;
 import com.birdbird314.tictactoe.util.Either;
 import com.birdbird314.tictactoe.util.Unit;

@@ -1,6 +1,7 @@
 package com.birdbird314.tictactoe;
 
 import com.birdbird314.tictactoe.action.Actions;
+import com.birdbird314.tictactoe.action.GameStartFail;
 import com.birdbird314.tictactoe.util.Either;
 import com.birdbird314.tictactoe.util.Unit;
 import org.junit.Test;

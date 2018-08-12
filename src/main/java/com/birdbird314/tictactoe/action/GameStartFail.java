@@ -1,4 +1,4 @@
-package com.birdbird314.tictactoe;
+package com.birdbird314.tictactoe.action;
 
 public enum GameStartFail {
   O_ALREADY_PLAYS, X_ALREADY_PLAYS
