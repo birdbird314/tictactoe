@@ -11,13 +11,15 @@ import static com.birdbird314.tictactoe.util.Unit.UNIT;
 
 class NewGame implements Command<GameStartFail, Unit> {
   private final ActivePlayers players;
+  private final GameStatuses gameStatuses;
   private final String xPlayerId;
   private final String oPlayerId;
 
-  NewGame(String xPlayerId, String oPlayerId, ActivePlayers players) {
+  NewGame(String xPlayerId, String oPlayerId, ActivePlayers players, GameStatuses gameStatuses) {
     this.xPlayerId = xPlayerId;
     this.oPlayerId = oPlayerId;
     this.players = players;
+    this.gameStatuses = gameStatuses;
   }
 
   @Override
@@ -38,6 +40,7 @@ class NewGame implements Command<GameStartFail, Unit> {
   private Either<GameStartFail, Unit> startNewGame() {
     players.startAGameAsX(xPlayerId);
     players.startAGameAsO(oPlayerId);
+    gameStatuses.newGame(xPlayerId, oPlayerId);
     return new Either.Right<>(UNIT);
   }
 

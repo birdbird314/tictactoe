@@ -10,13 +10,13 @@ import com.birdbird314.tictactoe.util.Unit;
 
 class MakeMove implements Command<InvalidMove, Unit> {
   private final ActivePlayers activePlayers;
-  private final GameStatus gameStatus;
+  private final GameStatuses gameStatuses;
   private final String playerId;
   private final Cell cellToMark;
 
-  MakeMove(ActivePlayers players, GameStatus gameStatus, String playerId, Cell cell) {
+  MakeMove(ActivePlayers players, GameStatuses gameStatuses, String playerId, Cell cell) {
     this.activePlayers = players;
-    this.gameStatus = gameStatus;
+    this.gameStatuses = gameStatuses;
     this.playerId = playerId;
     this.cellToMark = cell;
   }
@@ -24,13 +24,13 @@ class MakeMove implements Command<InvalidMove, Unit> {
   @Override
   public Either<InvalidMove, Unit> execute() {
     return makeMove().map(game -> {
-      gameStatus.submit(game);
+      gameStatuses.submit(playerId, game);
       return Unit.UNIT;
     });
   }
 
   private Either<InvalidMove, Game> makeMove() {
-    Game game = gameStatus.current();
+    Game game = gameStatuses.current(playerId);
     return activePlayers.isXPlayer(playerId) ? game.markXOn(cellToMark) : game.markOOn(cellToMark);
   }
 }
