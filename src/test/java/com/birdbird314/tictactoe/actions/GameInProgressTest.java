@@ -39,4 +39,14 @@ public class GameInProgressTest {
 
     assertThat(result.right()).isEqualTo(Unit.UNIT);
   }
+  
+  @Test
+  public void shouldFailWhenSecondPlayerTriesToMarkOccupiedCell() {
+    actions.newGame(X_PLAYER_ID, O_PLAYER_ID).execute();
+    actions.makeMove(X_PLAYER_ID, Cell.BOTTOM_LEFT).execute();
+
+    Either<InvalidMove, Unit> result = actions.makeMove(O_PLAYER_ID, Cell.BOTTOM_LEFT).execute();
+
+    assertThat(result.left()).isEqualTo(InvalidMove.CELL_IS_NOT_EMPTY);
+  }
 }
