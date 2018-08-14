@@ -36,8 +36,8 @@ class NewGame implements Command<GameStartFail, Unit> {
   }
 
   private Either<GameStartFail, Unit> startNewGame() {
-    players.aGameStartedFor(xPlayerId);
-    players.aGameStartedFor(oPlayerId);
+    players.startAGameAsX(xPlayerId);
+    players.startAGameAsO(oPlayerId);
     return new Either.Right<>(UNIT);
   }
 
