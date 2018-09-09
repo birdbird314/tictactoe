@@ -1,11 +1,11 @@
-package com.birdbird314.tictactoe.action;
+package com.birdbird314.tictactoe.core.action;
 
-import com.birdbird314.tictactoe.game.Cell;
-import com.birdbird314.tictactoe.game.InvalidMove;
-import com.birdbird314.tictactoe.gamestatus.GameStatuses;
-import com.birdbird314.tictactoe.player.ActivePlayers;
-import com.birdbird314.tictactoe.util.Command;
-import com.birdbird314.tictactoe.util.Unit;
+import com.birdbird314.tictactoe.core.game.Cell;
+import com.birdbird314.tictactoe.core.game.InvalidMove;
+import com.birdbird314.tictactoe.core.gamestatus.GameStatuses;
+import com.birdbird314.tictactoe.core.player.ActivePlayers;
+import com.birdbird314.tictactoe.core.util.Command;
+import com.birdbird314.tictactoe.core.util.Unit;
 
 public class Actions {
   private final ActivePlayers players;

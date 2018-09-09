@@ -1,4 +1,4 @@
-package com.birdbird314.tictactoe.game;
+package com.birdbird314.tictactoe.core.game;
 
 public enum Cell {
   MIDDLE_LEFT, UPPER_MIDDLE, UPPER_RIGHT,

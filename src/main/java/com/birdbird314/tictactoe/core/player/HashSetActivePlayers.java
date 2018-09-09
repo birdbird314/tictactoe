@@ -1,4 +1,4 @@
-package com.birdbird314.tictactoe.player;
+package com.birdbird314.tictactoe.core.player;
 
 import java.util.HashSet;
 import java.util.Set;

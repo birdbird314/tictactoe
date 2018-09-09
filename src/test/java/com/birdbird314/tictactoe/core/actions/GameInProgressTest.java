@@ -1,12 +1,12 @@
-package com.birdbird314.tictactoe.actions;
+package com.birdbird314.tictactoe.core.actions;
 
-import com.birdbird314.tictactoe.action.Actions;
-import com.birdbird314.tictactoe.game.Cell;
-import com.birdbird314.tictactoe.game.InvalidMove;
-import com.birdbird314.tictactoe.gamestatus.HashMapGameStatuses;
-import com.birdbird314.tictactoe.player.HashSetActivePlayers;
-import com.birdbird314.tictactoe.util.Either;
-import com.birdbird314.tictactoe.util.Unit;
+import com.birdbird314.tictactoe.core.action.Actions;
+import com.birdbird314.tictactoe.core.game.Cell;
+import com.birdbird314.tictactoe.core.game.InvalidMove;
+import com.birdbird314.tictactoe.core.gamestatus.HashMapGameStatuses;
+import com.birdbird314.tictactoe.core.player.HashSetActivePlayers;
+import com.birdbird314.tictactoe.core.util.Either;
+import com.birdbird314.tictactoe.core.util.Unit;
 import org.junit.Before;
 import org.junit.Test;
 

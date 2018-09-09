@@ -1,4 +1,4 @@
-package com.birdbird314.tictactoe.util;
+package com.birdbird314.tictactoe.core.util;
 
 import java.util.function.Consumer;
 import java.util.function.Function;

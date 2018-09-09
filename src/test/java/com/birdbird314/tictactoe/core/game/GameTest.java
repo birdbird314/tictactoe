@@ -1,18 +1,18 @@
-package com.birdbird314.tictactoe.game;
+package com.birdbird314.tictactoe.core.game;
 
 import org.junit.Test;
 
 import java.util.stream.Stream;
 
-import static com.birdbird314.tictactoe.game.Cell.BOTTOM_LEFT;
-import static com.birdbird314.tictactoe.game.Cell.BOTTOM_MIDDLE;
-import static com.birdbird314.tictactoe.game.Cell.BOTTOM_RIGHT;
-import static com.birdbird314.tictactoe.game.Cell.MIDDLE_LEFT;
-import static com.birdbird314.tictactoe.game.Cell.MIDDLE_MIDDLE;
-import static com.birdbird314.tictactoe.game.Cell.MIDDLE_RIGHT;
-import static com.birdbird314.tictactoe.game.Cell.UPPER_LEFT;
-import static com.birdbird314.tictactoe.game.Cell.UPPER_MIDDLE;
-import static com.birdbird314.tictactoe.game.Cell.UPPER_RIGHT;
+import static com.birdbird314.tictactoe.core.game.Cell.BOTTOM_LEFT;
+import static com.birdbird314.tictactoe.core.game.Cell.BOTTOM_MIDDLE;
+import static com.birdbird314.tictactoe.core.game.Cell.BOTTOM_RIGHT;
+import static com.birdbird314.tictactoe.core.game.Cell.MIDDLE_LEFT;
+import static com.birdbird314.tictactoe.core.game.Cell.MIDDLE_MIDDLE;
+import static com.birdbird314.tictactoe.core.game.Cell.MIDDLE_RIGHT;
+import static com.birdbird314.tictactoe.core.game.Cell.UPPER_LEFT;
+import static com.birdbird314.tictactoe.core.game.Cell.UPPER_MIDDLE;
+import static com.birdbird314.tictactoe.core.game.Cell.UPPER_RIGHT;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class GameTest {

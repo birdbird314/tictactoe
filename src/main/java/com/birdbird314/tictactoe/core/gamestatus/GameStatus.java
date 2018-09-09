@@ -1,6 +1,6 @@
-package com.birdbird314.tictactoe.gamestatus;
+package com.birdbird314.tictactoe.core.gamestatus;
 
-import com.birdbird314.tictactoe.game.Game;
+import com.birdbird314.tictactoe.core.game.Game;
 
 class GameStatus {
   private Game game;
