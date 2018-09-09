@@ -1,9 +1,9 @@
 package com.birdbird314.tictactoe.actions;
 
 import com.birdbird314.tictactoe.action.Actions;
-import com.birdbird314.tictactoe.gamestatus.GameStatuses;
 import com.birdbird314.tictactoe.game.Cell;
 import com.birdbird314.tictactoe.game.InvalidMove;
+import com.birdbird314.tictactoe.gamestatus.HashMapGameStatuses;
 import com.birdbird314.tictactoe.player.HashSetActivePlayers;
 import com.birdbird314.tictactoe.util.Either;
 import com.birdbird314.tictactoe.util.Unit;
@@ -22,7 +22,7 @@ public class GameInProgressTest {
 
   @Before
   public void setUp() {
-    actions = new Actions(new HashSetActivePlayers(), new GameStatuses());
+    actions = new Actions(new HashSetActivePlayers(), new HashMapGameStatuses());
   }
 
   @Test
