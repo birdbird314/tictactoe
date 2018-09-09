@@ -1,6 +1,7 @@
 package com.birdbird314.tictactoe.actions;
 
 import com.birdbird314.tictactoe.action.Actions;
+import com.birdbird314.tictactoe.action.GameStatuses;
 import com.birdbird314.tictactoe.game.Cell;
 import com.birdbird314.tictactoe.game.InvalidMove;
 import com.birdbird314.tictactoe.player.HashSetActivePlayers;
@@ -21,7 +22,7 @@ public class GameInProgressTest {
 
   @Before
   public void setUp() {
-    actions = new Actions(new HashSetActivePlayers());
+    actions = new Actions(new HashSetActivePlayers(), new GameStatuses());
   }
 
   @Test

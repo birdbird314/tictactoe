@@ -5,10 +5,10 @@ import com.birdbird314.tictactoe.game.Game;
 import java.util.HashMap;
 import java.util.Map;
 
-class GameStatuses {
+public class GameStatuses {
   private final Map<String, GameStatus> gameStatusMap;
 
-  GameStatuses() {
+  public GameStatuses() {
     this.gameStatusMap = new HashMap<>();
   }
 

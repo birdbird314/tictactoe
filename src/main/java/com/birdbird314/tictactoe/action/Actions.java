@@ -8,10 +8,11 @@ import com.birdbird314.tictactoe.util.Unit;
 
 public class Actions {
   private final ActivePlayers players;
-  private final GameStatuses gameStatuses = new GameStatuses();
+  private final GameStatuses gameStatuses;
 
-  public Actions(ActivePlayers players) {
+  public Actions(ActivePlayers players, GameStatuses gameStatuses) {
     this.players = players;
+    this.gameStatuses = gameStatuses;
   }
 
   public Command<GameStartFail, Unit> newGame(String xPlayerId, String oPlayerId) {
