@@ -1,4 +1,4 @@
-package com.birdbird314.tictactoe.action;
+package com.birdbird314.tictactoe.gamestatus;
 
 import com.birdbird314.tictactoe.game.Game;
 

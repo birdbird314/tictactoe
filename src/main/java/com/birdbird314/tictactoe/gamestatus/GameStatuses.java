@@ -1,4 +1,4 @@
-package com.birdbird314.tictactoe.action;
+package com.birdbird314.tictactoe.gamestatus;
 
 import com.birdbird314.tictactoe.game.Game;
 
@@ -12,13 +12,13 @@ public class GameStatuses {
     this.gameStatusMap = new HashMap<>();
   }
 
-  void newGame(String xPlayerId, String oPlayerId) {
+  public void newGame(String xPlayerId, String oPlayerId) {
     GameStatus newGame = new GameStatus(new Game());
     gameStatusMap.put(xPlayerId, newGame);
     gameStatusMap.put(oPlayerId, newGame);
   }
 
-  Game current(String playerId) {
+  public Game current(String playerId) {
     return statusOf(playerId).current();
   }
 
